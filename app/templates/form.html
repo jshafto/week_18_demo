@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Page</title>
+</head>
+
+<body>
+    <h1>Let's make a widget</h1>
+    <h2>Here is a form</h2>
+    <form action="" method="post">
+        {{ form.csrf_token() }}
+        <p>{{ form.color.label }} {{ form.color }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    <a href="/">Home</a>
+</body>
+
+</html>
