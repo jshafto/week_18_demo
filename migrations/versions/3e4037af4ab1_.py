@@ -1,4 +1,4 @@
-"""you could change it
+"""empty message
 
 Revision ID: 3e4037af4ab1
 Revises: 342309170fff
