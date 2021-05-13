@@ -27,6 +27,12 @@ class Widget(db.Model):
         back_populates="widgets"
     )
 
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "color": self.color,
+        }
+
 
 class Store(db.Model):
     __tablename__ = "stores"
