@@ -1,4 +1,5 @@
 from flask import Flask, render_template, redirect, session
+from flask_migrate import Migrate
 from app.config import Config
 from app.forms.fun_form import WidgetForm
 from app.models import db, Widget
@@ -6,6 +7,7 @@ from app.models import db, Widget
 app = Flask(__name__)
 app.config.from_object(Config)
 db.init_app(app)
+Migrate(app, db)
 
 
 @app.route("/")
