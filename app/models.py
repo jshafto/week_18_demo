@@ -27,6 +27,12 @@ class Widget(db.Model):
         back_populates="widgets"
     )
 
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "color": self.color,
+        }
+
 
 class Store(db.Model):
     __tablename__ = "stores"
@@ -38,3 +44,11 @@ class Store(db.Model):
         secondary=widget_stores,
         back_populates="stores"
     )
+
+
+class Juice(db.Model):
+    __tablename__ = "juices"
+    id = db.Column(db.Integer, primary_key=True)
+    energy = db.Column(db.Integer)
+    activities = db.Column(db.String(20))
+    toys = db.Column(db.String(100))
